@@ -1,22 +1,8 @@
 <?php
-require_once ('../config/db.php');
-$clients = $pdo->query ("SELECT * FROM client")->fetchAll(PDO::FETCH_OBJ);
-
+require_once APPROOT .'/views/inc/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-</head>
-<body >
 
-    <?php
-    include('navbar.php');
-    ?>
    
     <button type="button" class="top-10 mb-8 ml-[260px] relative px-8 py-4 ml-4 overflow-hidden font-semibold  bg-[#fdba74]">Ajouter
 </button>
@@ -45,7 +31,10 @@ $clients = $pdo->query ("SELECT * FROM client")->fetchAll(PDO::FETCH_OBJ);
     </tr>
 </thead>
 <tbody>
-    <?php foreach ($clients as $client): ?>
+    <?php
+$clients = $pdo->query ("SELECT * FROM client")->fetchAll(PDO::FETCH_OBJ);
+
+     foreach ($clients as $client): ?>
         <tr>
             <td class="p-4 border-b border-blue-gray-50"><?= $client->id_client ?></td>
             <td class="p-4 border-b border-blue-gray-50"><?= $client->nom ?></td>

@@ -1,10 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <title></title>
+</head>
+<body>
 
 
 
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
    <div class="h-full w-[200px] px-3 py-4 overflow-y-auto bg-[#fdba74] dark:bg-gray-800">
    <a href="index.php" class="flex flex-col items-center ps-3.5 mb-5">
-    <img src="../../public/photos/logo.png" class="h-12 me-3 sm:h-12" alt="chaabat" />
+    <img src="../../../public/photos/logo.png" class="h-12 me-3 sm:h-12" alt="chaabat" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
   <img class="w-8 h-8" src="../../public/photos/administrateur.png" alt="">
 

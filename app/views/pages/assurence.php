@@ -1,20 +1,7 @@
 <?php
-require_once ('../config/db.php');
+require_once APPROOT .'/views/inc/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-</head>
-<body >
-
-    <?php
-    include('navbar.php');
-    ?>
     
 <div class=" flex justify-evenly items-center ml-64 mb-8 p-[30px]">
     

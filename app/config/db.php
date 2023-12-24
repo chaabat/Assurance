@@ -2,14 +2,40 @@
 
 require_once ('config.php');
 
-try {
+class Database
+{
+    private $host = DB_HOST;
+    private $dbname= DB_NAME;
+    private $user = DB_USER;
+    private $pass = DB_PASS;
+    private $pdo;
 
-    $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    public function __construct($host, $dbname, $user, $pass)
+    {
+        $this->host = $host;
+        $this->dbname = $dbname;
+        $this->user = $user;
+        $this->pass = $pass;
 
-    // echo "connected successfully";
-}catch(PDOException $e){
-    echo "error: ".$e->getMessage ;
+        $this->connect();
+    }
+
+    private function connect()
+    {
+        try {
+            $this->pdo = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->user, $this->pass);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // echo "connected successfully";
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            die();
+        }
+    }
+
+    public function getPdo()
+    {
+        return $this->pdo;
+    }
 }
 
 

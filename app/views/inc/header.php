@@ -14,7 +14,7 @@
   <aside id="logo-sidebar"
     class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
-    <div class="h-full w-[200px] px-3 py-4 overflow-y-auto bg-[#fdba74] dark:bg-gray-800">
+    <div class="h-full w-[200px] px-3 py-4 overflow-y-auto bg-[#3b82f6] dark:bg-gray-800">
       <a href="<#" class="flex flex-col items-center ps-3.5 mb-5">
         <img src="<?php echo URL_ROOT ?>/photos/logo.png" class="h-12 me-3 sm:h-12" alt="chaabat" />
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">

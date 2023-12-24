@@ -1,5 +1,5 @@
 <?php
-  class Pages extends Controller {
+  class Pages extends Controller{
     public function __construct(){
   
 
@@ -15,8 +15,11 @@
       $this->view('pages/clients');
 
     }
-
-    public function assurence(){
+    public function assurence() {
       $this->view('pages/assurence');
+       
+
     }
+
+  
   }

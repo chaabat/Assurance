@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title></title>
 </head>
 
-<body>
+<body class="bg-[#caf0f8]">
 
 
   <aside id="logo-sidebar"
@@ -48,7 +49,7 @@
         </li>
 
         <li>
-          <a href="transactions.php"
+          <a href="<?php echo URL_ROOT ?>/pages/article"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <img class="w-8 h-8" src="<?php echo URL_ROOT ?>/photos/protection.png" alt="">
 
@@ -56,7 +57,7 @@
           </a>
         </li>
         <li>
-          <a href="Agences.php"
+          <a href="<?php echo URL_ROOT ?>/pages/claim"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <img class="w-8 h-8" src="<?php echo URL_ROOT ?>/photos/reclamer.png" alt="">
 
@@ -65,7 +66,7 @@
           </a>
         </li>
         <li>
-          <a href="banques.php"
+          <a href="<?php echo URL_ROOT ?>/pages/prime"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <img class="w-8 h-8" src="<?php echo URL_ROOT ?>/photos/dirham.png" alt="">
 

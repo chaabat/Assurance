@@ -1,9 +1,7 @@
 <?php
-require_once APPROOT .'/views/inc/header.php';
-
+require_once APPROOT . '/views/inc/header.php';
 ?>
 
-    
 <a href="#" class="ml-[260px] mt-8 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-[#3b82f6] to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
 Ajouter
@@ -19,7 +17,7 @@ Ajouter
                     class="cursor-pointer border-y border-blue-gray-100 bg-[#3b82f6] p-4 transition-colors hover:bg-blue-gray-50">
                     <p
                         class="antialiased font-sans text-sm text-blue-gray-900 flex items-center justify-between gap-2 ">
-                        ID Assereure
+                        ID Article
                     </p>
                 </th>
                 <th
@@ -28,12 +26,17 @@ Ajouter
                         class="antialiased font-sans text-sm text-blue-gray-900 flex items-center justify-between gap-2 ">
                         Nom
                 </th>
-              
                 <th
                     class="cursor-pointer border-y border-blue-gray-100 bg-[#3b82f6] p-4 transition-colors hover:bg-blue-gray-50">
                     <p
                         class="antialiased font-sans text-sm text-blue-gray-900 flex items-center justify-between gap-2 ">
-                        Adress
+                        ID Assereur
+                </th>
+                <th
+                    class="cursor-pointer border-y border-blue-gray-100 bg-[#3b82f6] p-4 transition-colors hover:bg-blue-gray-50">
+                    <p
+                        class="antialiased font-sans text-sm text-blue-gray-900 flex items-center justify-between gap-2 ">
+                        ID Client
                 </th>
 
                 <th
@@ -45,12 +48,9 @@ Ajouter
             </tr>
         </thead>
         <tbody>
-       
+        
 
         </tbody>
 
     </table>
 </div>
-
-
- 

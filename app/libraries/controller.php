@@ -13,6 +13,16 @@
       return new $model();
     }
 
+    public function services($services){
+      // Require servi file
+      require_once '../app/services/implementations/' . $services . '.php';
+
+      // Instatiate servi
+      return new $services();
+    }
+
+
+
     // Load view
     public function view($view, $data = []){
       // Check for view file

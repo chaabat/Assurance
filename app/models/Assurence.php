@@ -10,12 +10,9 @@ class Assurence
     private $nom;
     private $adress;
 
-    public function __construct($id_assureur, $nom, $adress)
+    public function __construct()
     {
-        $this->$id_assureur = $id_assureur;
-        $this->Name = $nom;
-        $this->adress = $adress;
-
+        
 
     }
 

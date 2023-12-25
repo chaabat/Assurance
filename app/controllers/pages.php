@@ -15,10 +15,8 @@
       $this->view('pages/clients');
 
     }
-    public function assurence() {
+    public function Assurence() {
       $this->view('pages/assurence');
-       
-
     }
 
   

@@ -1,14 +1,13 @@
 <?php
 
-class assureur_client
+class AssureurClient
 {
     private $id_assureur;
     private $id_client;
 
-    public function __construct($id_assureur, $id_client)
+    public function __construct()
     {
-        $this->id_assureur = $id_assureur;
-        $this->id_client = $id_client;
+        
     }
 
     public function getId_assureur()

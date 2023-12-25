@@ -1,6 +1,6 @@
 <?php
 
-class Clients
+class Client
 {
 
     private $id_client;
@@ -8,12 +8,9 @@ class Clients
     private $prenom;
     private $adress;
 
-    public function __construct($id_client, $nom, $prenom, $adress)
+    public function __construct()
     {
-        $this->id_client = $id_client;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->adress = $adress;
+       
 
     }
 

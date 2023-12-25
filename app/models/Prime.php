@@ -6,11 +6,9 @@ class Prime
     private $montant;
     private $id_claim;
 
-    public function __construct($id_prime, $montant, $d_claim)
+    public function __construct()
     {
-        $this->id_prime = $id_prime;
-        $this->montant = $montant;
-        $this->d_claim = $d_claim;
+       
     }
 
     public function getIdPrime()

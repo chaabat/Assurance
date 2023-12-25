@@ -8,12 +8,9 @@ class Article
     private $id_assureur;
     private $id_client;
 
-    public function __construct($id_article, $nom, $id_assureur, $id_client)
+    public function __construct()
     {
-        $this->id_article = $id_article;
-        $this->nom = $nom;
-        $this->id_assureur = $id_assureur;
-        $this->id_client = $id_client;
+       
     }
     public function getIdArticle()
     {
@@ -46,6 +43,7 @@ class Article
     {
         $this->id_client = $id_client;
     }
+
 }
 
 ?>

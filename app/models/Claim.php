@@ -7,12 +7,9 @@ class Claim
     private $description;
     private $id_article;
 
-    public function __construct($id_claim, $objet, $description, $id_article)
+    public function __construct()
     {
-        $this->id_claim = $id_claim;
-        $this->objet = $objet;
-        $this->description = $description;
-        $this->id_article = $id_article;
+        
     }
 
     public function getIdClaim()

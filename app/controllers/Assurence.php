@@ -1,12 +1,12 @@
 <?php
 
 
-class Assurence extends Controller {
+class assurence extends Controller {
     public function __construct() {
    
     }
 
-    public function assurence() {
+    public function Assurence() {
       $this->view('pages/assurence');
        
 

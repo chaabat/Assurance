@@ -26,7 +26,7 @@ class ClientServiceImp implements ClientServiceI
     {
         $clientData = "select * from client where id_client = :id_client";
         $this->db->query($clientData);
-        $this->db->bind(":agencyId", $idClient);
+        $this->db->bind(":id_client", $idClient);
         try {
             return $this->db->single();
         } catch (PDOException $e) {

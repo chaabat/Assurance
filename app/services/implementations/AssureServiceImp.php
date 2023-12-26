@@ -21,9 +21,9 @@ class AssureServiceImp implements AssureServiceI
 
     public function getAssurencetById($idAssurence)
     {
-        $assurData = "select * from assureur where id_assurence = :id_assurence";
+        $assurData = "select * from assureur where id_assureur = :id_assureur";
         $this->db->query($assurData);
-        $this->db->bind(":agencyId", $idAssurence);
+        $this->db->bind(":id_assureur", $idAssurence);
         try {
             return $this->db->single();
         } catch (PDOException $e) {
@@ -37,10 +37,10 @@ class AssureServiceImp implements AssureServiceI
     public function addAssurence(Assurence $assurence)
     {
         $asId = $assurence->id_assureur;
-        $addAdressQuery = "INSERT INTO `assureur`(`id_assurence`, `nom`,`adress`) VALUES(:id_assurence,:nom,:adress)";
+        $addAdressQuery = "INSERT INTO `assureur`(`id_assureur`, `nom`,`adress`) VALUES(:id_assureur,:nom,:adress)";
         $this->db->query($addAdressQuery);
 
-        $this->db->bind(":id_assurence", $asId);
+        $this->db->bind(":id_assureur", $asId);
         $this->db->bind(":nom", $assurence->nom);
         $this->db->bind("adress", $assurence->adress);
 
@@ -57,9 +57,9 @@ class AssureServiceImp implements AssureServiceI
 
     public function removeAssurence($removeAssurence)
     {
-        $remove = "DELETE FROM assureur WHERE id_assurence = :id_assurence";
+        $remove = "DELETE FROM assureur WHERE id_assureur = :id_assureur";
         $this->db->query($remove);
-        $this->db->bind(":id_assurence", $removeAssurence);
+        $this->db->bind(":id_assureur", $removeAssurence);
 
         try {
             $this->db->execute();
@@ -72,11 +72,11 @@ class AssureServiceImp implements AssureServiceI
 
     public function updateAssurence(Assurence $assurence)
     {
-        $UpdateAssur = "UPDATE `assureur` SET `nom`= :nom,`adress`=:adress, WHERE id_assurence = :id_assurence";
+        $UpdateAssur = "UPDATE `assureur` SET `nom`= :nom,`adress`=:adress, WHERE id_assureur = :id_assureur";
         $this->db->query($UpdateAssur);
         $this->db->bind(":nom", $assurence->getNom());
         $this->db->bind(":adress", $assurence->getAdress());
-        $this->db->bind(":id_assurence", $assurence->getIdAssureur());
+        $this->db->bind(":id_assureur", $assurence->getIdAssureur());
         try {
             $this->db->execute();
             echo "updated";

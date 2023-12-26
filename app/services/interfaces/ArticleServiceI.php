@@ -9,11 +9,11 @@ interface ArticleServiceI{
 
     public function getArticletById($idArticle);
 
-    public function addArticle(Assurence $article);
+    public function addArticle(Article $article);
 
     public function removeArticle($removeArticle);
 
-    public function updateArticle(Assurence $article);
+    public function updateArticle(Article $article);
 }
 
 ?>

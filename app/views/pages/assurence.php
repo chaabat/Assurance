@@ -46,7 +46,22 @@ Ajouter
         </thead>
         <tbody>
        
-
+        <?php foreach($data as $assurence){ ?>
+                        <tr>
+                            <td><?= $assurence->id_assureur  ?></td>
+                            <td><?= $assurence->nom ?></td>
+                            <td><?= $assurence->adress ?></td>
+                            
+                            <td class="flex gap-[10px]">
+                                <a href='<?=URL_ROOT?>/pages/deleteClient?id=<?= $assurence->id_assurence ?>' class='flex items-center justify-center bg-rose-500 text-white w-[40px] h-[40px]'>
+                                    <i class='fa-solid fa-trash'></i>
+                                </a>
+                                <a href='<?=URL_ROOT?>/editUser?id=<?= $assurence->id_assurence ?>' class='flex items-center justify-center bg-green-500 text-white w-[40px] h-[40px]'>
+                                    <i class='fa-solid fa-pen'></i>
+                                </a>
+                            </td>
+                        </tr>  
+                <?php  } ?>
         </tbody>
 
     </table>

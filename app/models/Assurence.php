@@ -17,11 +17,11 @@ class Assurence
     }
 
 
-    public function getId_assureur()
+    public function getIdAssureur()
     {
         return $this->id_assureur;
     }
-    public function setId_assureur($id_assureur)
+    public function setIdAssureur($id_assureur)
     {
         return $this->id_assureur = $id_assureur;
     }

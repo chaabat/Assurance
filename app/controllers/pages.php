@@ -1,27 +1,29 @@
 <?php
   class Pages extends Controller{
 
-    private $ClientServiceImp;
+   
     private $db;
-    public function __construct(){
-      $this->db = new Database;
-      $this->ClientServiceImp = $this->services('ClientServiceImp');
-    
-    }
-    
+      
     public function index(){
     
      
       $this->view('pages/index');
     }
 
+    //********Affichage********//
+
     public function clients(){
-      $data = $this->ClientServiceImp->getAllClients();
+      $db = new Database();
+      $clientService = new ClientServiceImp($db);
+      $data = $clientService->getAllClients();
       $this->view('pages/client', $data);
 
     }
     public function assurence() {
-      $this->view('pages/assurence');
+      $db = new Database();
+      $clientService = new AssureServiceImp($db);
+      $data = $clientService->getAllAssurence();
+      $this->view('pages/assurence', $data);
     }
     public function article() {
       $this->view('pages/article');
@@ -35,7 +37,42 @@
       $this->view('pages/prime');
     }
 
- 
+ //**********Delete**************//
+public function deleteClient() {
+  
+    $id = $_GET["id"];
+
+    $db = new Database();
+    $clientService = new ClientServiceImp($db);
+    try{
+       
+      $clientService->removeClient($id);
+      header("Location:".URL_ROOT."/pages/clients");
+
+    }
+    catch(PDOException $e){
+        die($e->getMessage());
+    
+}
+}
+
+public function removeAssurence() {
+  
+  $id = $_GET["id"];
+
+  $db = new Database();
+  $clientService = new AssureServiceImp($db);
+  try{
+     
+    $clientService->removeAssurence($id);
+    header("Location:".URL_ROOT."/pages/assurence");
+
+  }
+  catch(PDOException $e){
+      die($e->getMessage());
+  
+}
+}
 
 
 

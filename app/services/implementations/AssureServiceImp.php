@@ -73,19 +73,19 @@ class AssureServiceImp implements AssureServiceI
     }
 
     public function updateAssurence(Assurence $assurence)
+   
     {
-        $UpdateAssur = "UPDATE `assureur` SET `nom`= :nom,`adress`=:adress,`logo`= :logo, WHERE id_assureur = :id_assureur";
-        $this->db->query($UpdateAssur);
+        $updateAssur = "UPDATE `assureur` SET `nom`=:nom,`adress`= :adress WHERE id_assureur = :id_assureur";
+        $this->db->query($updateAssur);
         $this->db->bind(":nom", $assurence->getNom());
         $this->db->bind(":adress", $assurence->getAdress());
-        $this->db->bind(":logo", $assurence->getLogo());
+        $this->db->bind(":id_assureur", $assurence->getIdAssureur());
         try {
             $this->db->execute();
             echo "updated";
         } catch (PDOException $e) {
             die($e->getMessage());
         }
-       
 
     }
 

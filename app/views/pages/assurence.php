@@ -81,7 +81,7 @@ require_once APPROOT . '/views/inc/header.php';
                             <img src="<?php echo URL_ROOT ?>/photos/supprimer.png" class="h-4 me-3 sm:h-6" alt="chaabat" />
                         </a>
 
-                        <a href='<?= URL_ROOT ?>/pages/editAssurance?id_assureur=<?= $assurence->id_assureur ?>'>
+                        <a href='<?= URL_ROOT ?>/pages/editAssurance?id=<?= $assurence->id_assureur ?>'>
                             <img src="<?php echo URL_ROOT ?>/photos/editer.png" class="h-4 sm:h-6" alt="chaabat" />
                         </a>
                     </td>

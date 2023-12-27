@@ -1,5 +1,6 @@
 <?php
 require_once APPROOT . '/views/inc/header.php';
+require_once APPROOT . '/services/implementations/AssureServiceImp.php';
 ?>
 
 <a href="#"
@@ -134,20 +135,15 @@ require_once APPROOT . '/views/inc/header.php';
                     </div>
                     <div class="col-span-2">
                         <label for="name"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choisir Assurence</label>
-                        <select name="assurence" class=" block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md
-                        dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500
-                        dark:focus:border-blue-500 focus:outline-none focus:ring">
-                            <option disabled selected value="0" select >select assureur</option>
-                            <?php 
-    
-                               foreach ($asr_data as $asr) {
-                                    echo "<option value='". $asr['id_assureur'] ."' >". $asr['nom'] ."</option>";
-                               }
-
-                            ?>
-                           
-                        </select>
+                            >Choisir Assurence</label>
+                            <select name="id_assereur" id="id_assereur" class="w-full p-2 border rounded">
+                        <?php
+                       
+                        foreach ($clients as $client) {
+                            echo "<option value='$client[id_assereur]'>$client[nom]</option>";
+                        }
+                        ?>
+                    </select>
                     </div>
 
 

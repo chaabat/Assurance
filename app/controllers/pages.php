@@ -254,7 +254,7 @@ class Pages extends Controller
     ob_start();
 
     $clientservi = new AssureServiceImp($this->db);
-    $assurance = $clientservi->getAssurencetById($_GET['id_assureur']);
+    $assurance = $clientservi->getAssurencetById($_GET['id']);
     $data = [
       'assurence' => $assurance
     ];
@@ -262,14 +262,14 @@ class Pages extends Controller
 
     if (isset($_POST['submit'])) {
       $update = [
-        'nom' => $_POST['nom'],
-        'id_assureur' => $_POST['id_assureur'],
-        'adress' => $_POST['adress'],
+          'nom' => $_POST['nom'],
+          'id' => $_POST['id'],
+          'adress' => $_POST['adress'],
       ];
 
 
       $updateAssurance = new Assurence();
-      $updateAssurance->setIdAssureur($update['id_assureur']);
+      $updateAssurance->setIdAssureur($update['id']);
       $updateAssurance->setNom($update['nom']);
       $updateAssurance->setAdress($update['adress']);
 
@@ -280,9 +280,9 @@ class Pages extends Controller
 
     }
     $data = [
+      'id' => '',
       'nom' => '',
-      'adress' => '',
-      'assurence' => ''
+      'adress' => ''
     ];
 
     $this->view("pages/editAssurance", $data);

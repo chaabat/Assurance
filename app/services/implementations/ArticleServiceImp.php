@@ -32,14 +32,14 @@ class ArticleServiceImp implements ArticleServiceI
     }
 
     public function addArticle(Article $article){
-        $asId = $article->id_assureur;
-        $addAdressQuery = "INSERT INTO `article`(`id_article`, `nom`,`id_assureur`,`id_client`) VALUES(:id_article,:nom,:id_assureur,:id_client)";
+        // $asId = $article->id_assureur;
+        $addAdressQuery = "INSERT INTO `article`( `nom`,`id_assureur`,`id_client`) VALUES(:nom,:id_assureur,:id_client)";
         $this->db->query($addAdressQuery);
 
-        $this->db->bind(":id_assurence", $asId);
-        $this->db->bind(":nom", $article->nom);
-        $this->db->bind(":id_assurence", $article->id_assureur);
-        $this->db->bind(":id_client", $article->id_client);
+        // $this->db->bind(":id_assurence", $asId);
+        $this->db->bind(":nom", $article->getNom());
+        // $this->db->bind(":id_assurence", $article->id_assureur);
+        // $this->db->bind(":id_client", $article->id_client);
 
 
 

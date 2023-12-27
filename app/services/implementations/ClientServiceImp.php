@@ -38,14 +38,14 @@ class ClientServiceImp implements ClientServiceI
 
     public function addClient(Client $client)
     {
-        $clId = $client->id_client;
-        $addAdressQuery = "INSERT INTO `client`(`id_client`, `nom`, `prenom`, `adress`) VALUES(:id_client,:nom,:prenom,:adress)";
+        // $clId = $client->getIdClient();
+        $addAdressQuery = "INSERT INTO `client`(`nom`, `prenom`, `adress`) VALUES(:nom,:prenom,:adress)";
         $this->db->query($addAdressQuery);
 
-        $this->db->bind(":id_client", $clId);
-        $this->db->bind(":nom", $client->nom);
-        $this->db->bind(":prenom", $client->prenom);
-        $this->db->bind("adress", $client->adress);
+        // $this->db->bind(":id_client", $clId);
+        $this->db->bind(":nom", $client->getNom());
+        $this->db->bind(":prenom", $client->getPrenom());
+        $this->db->bind(":adress", $client->getAdress());
 
 
 
@@ -74,7 +74,7 @@ class ClientServiceImp implements ClientServiceI
 
     public function updateClient(Client $client)
     {
-        $updateClient = "UPDATE `client` SET `nom`= :nom,`prenom`= :prenom,`adress`=:adress, WHERE id_client = :id_client";
+        $updateClient = "UPDATE `client` SET `nom`=:nom,`prenom`= :prenom,`adress`= :adress WHERE id_client = :id_client";
         $this->db->query($updateClient);
         $this->db->bind(":nom", $client->getNom());
         $this->db->bind(":prenom", $client->getPrenom());

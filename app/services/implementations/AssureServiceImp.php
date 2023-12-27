@@ -36,13 +36,15 @@ class AssureServiceImp implements AssureServiceI
 
     public function addAssurence(Assurence $assurence)
     {
-        $asId = $assurence->id_assureur;
-        $addAdressQuery = "INSERT INTO `assureur`(`id_assureur`, `nom`,`adress`) VALUES(:id_assureur,:nom,:adress)";
+        // $asId = $assurence->getIdAssureurence(); 
+        $addAdressQuery = "INSERT INTO `assureur`( `nom`,`adress`,`logo`) VALUES(:nom,:adress,:logo)";
         $this->db->query($addAdressQuery);
 
-        $this->db->bind(":id_assureur", $asId);
-        $this->db->bind(":nom", $assurence->nom);
-        $this->db->bind("adress", $assurence->adress);
+        // $this->db->bind(":id_assureur", getIdAssureurence());
+        $this->db->bind(":nom", $assurence->getnom());
+        $this->db->bind("adress", $assurence->getadress());
+        $this->db->bind("logo", $assurence->getLogo());
+
 
 
 
@@ -72,11 +74,11 @@ class AssureServiceImp implements AssureServiceI
 
     public function updateAssurence(Assurence $assurence)
     {
-        $UpdateAssur = "UPDATE `assureur` SET `nom`= :nom,`adress`=:adress, WHERE id_assureur = :id_assureur";
+        $UpdateAssur = "UPDATE `assureur` SET `nom`= :nom,`adress`=:adress,`logo`= :logo, WHERE id_assureur = :id_assureur";
         $this->db->query($UpdateAssur);
         $this->db->bind(":nom", $assurence->getNom());
         $this->db->bind(":adress", $assurence->getAdress());
-        $this->db->bind(":id_assureur", $assurence->getIdAssureur());
+        $this->db->bind(":logo", $assurence->getLogo());
         try {
             $this->db->execute();
             echo "updated";

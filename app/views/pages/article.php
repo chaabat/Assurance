@@ -48,7 +48,23 @@ Ajouter
             </tr>
         </thead>
         <tbody>
-        
+        <?php foreach($data as $article){ ?>
+                        <tr>
+                            <td><?= $article->id_article  ?></td>
+                            <td><?= $article->nom ?></td>
+                            <td><?= $article->id_assureur ?></td>
+                            <td><?= $article->id_client ?></td>
+
+                            <td class="flex gap-[10px]">
+                                <a href='<?=URL_ROOT?>/pages/deleteArticle?id=<?= $article->id_article ?>' class='flex items-center justify-center bg-rose-500 text-white w-[40px] h-[40px]'>
+                                    <i class='fa-solid fa-trash'></i>
+                                </a>
+                                <a href='<?=URL_ROOT?>/editUser?id=<?= $article->id_article ?>' class='flex items-center justify-center bg-green-500 text-white w-[40px] h-[40px]'>
+                                    <i class='fa-solid fa-pen'></i>
+                                </a>
+                            </td>
+                        </tr>  
+                <?php  } ?>
 
         </tbody>
 

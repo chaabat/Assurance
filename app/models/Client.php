@@ -18,6 +18,10 @@ class Client
     {
         return $this->id_client;
     }
+    public function setIdClient($value)
+    {
+        return $this->id_client = $value;
+    }
 
     public function getNom()
     {
@@ -25,7 +29,7 @@ class Client
     }
     public function setNom($nom)
     {
-        $this->nome = $nom;
+        $this->nom = $nom;
     }
 
     public function getPrenom()
